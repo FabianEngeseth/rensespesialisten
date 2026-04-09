@@ -5,7 +5,7 @@ import { reader } from "@/lib/reader";
 export const metadata: Metadata = {
   title: "Tjenester",
   description:
-    "Se alle tjenestene vi tilbyr: hjemvask, kontorrenhold, flyttevask, vindusvask og storengjøring i Namdalen.",
+    "Se alle tjenestene vi tilbyr: sofarens, tepperens, madrassrens, bilinteriørrens og skinnpleie i Namdalen.",
 };
 
 const serviceIcons: Record<string, React.ReactNode> = {
@@ -55,10 +55,10 @@ export default async function TjenesterPage() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl">
             <p className="text-blue-300 text-sm font-medium uppercase tracking-wider mb-3">Tjenester</p>
-            <h1 className="text-4xl sm:text-5xl font-bold mb-4">Hva vi tilbyr</h1>
+            <h1 className="text-4xl sm:text-5xl font-bold mb-4">Våre tjenester</h1>
             <p className="text-xl text-blue-100">
-              Vi tilbyr et bredt spekter av rengjøringstjenester tilpasset ditt behov.
-              Fast pris, ingen overraskelser.
+              Profesjonell dyprengjøring av møbler, tepper og tekstiler.
+              Vi kommer hjem til deg med alt utstyr.
             </p>
           </div>
         </div>

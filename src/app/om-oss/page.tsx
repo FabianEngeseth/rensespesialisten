@@ -5,7 +5,7 @@ import { reader } from "@/lib/reader";
 export const metadata: Metadata = {
   title: "Om oss",
   description:
-    "Lær mer om Rensespesialisten — et lokalt rengjøringsselskap i Namdalen med fokus på pålitelighet, grundighet og rettferdig pris.",
+    "Lær mer om Rensespesialisten — spesialister på profesjonell møbelrens og tekstilvask i Namdalen.",
 };
 
 export default async function OmOssPage() {
@@ -35,19 +35,21 @@ export default async function OmOssPage() {
           <div className="grid lg:grid-cols-3 gap-12">
             <div className="lg:col-span-2 prose prose-lg prose-slate max-w-none">
               <p className="text-slate-700 leading-relaxed text-lg">
-                Rensespesialisten ble etablert med ett mål: å gi deg en ren og trivelig
-                hverdag uten at du behøver å løfte en finger. Vi er stolte av det vi gjør
-                og tar ansvar for hvert eneste oppdrag.
+                Rensespesialisten ble startet fordi vi så et behov: folk kaster sofaer,
+                tepper og madrasser som fint kunne vært reddet med en skikkelig
+                dyprengjøring. Vi kommer hjem til deg med profesjonelt utstyr og gjør
+                jobben på stedet.
               </p>
               <p className="text-slate-700 leading-relaxed">
-                Vi jobber for både private husholdninger og bedrifter i hele Namdalen.
-                Enten det er fast ukentlig rengjøring, grundig storengjøring eller
-                flyttevask — vi stiller med erfarne folk og profesjonelt utstyr.
+                Vi jobber for både private og bedrifter i hele Namdalen og
+                Nærøysund-regionen. Enten det er en flekkete sofa, et teppe som trenger
+                oppfriskning eller bilinteriør som skal friskes opp — vi har utstyret
+                og kunnskapen.
               </p>
               <p className="text-slate-700 leading-relaxed">
-                Som en lokal bedrift er vi opptatt av å bygge langvarige relasjoner med
-                kundene våre. Vi er alltid tilgjengelige for spørsmål og tilpasser oss
-                dine behov og timeplan.
+                Som lokal bedrift er vi opptatt av å bygge langvarige relasjoner.
+                Vi gir deg et konkret tilbud på forhånd, og du betaler ikke før du er
+                fornøyd med resultatet.
               </p>
             </div>
 
@@ -93,10 +95,9 @@ export default async function OmOssPage() {
       {/* CTA */}
       <section className="py-16 bg-blue-800">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
-          <h2 className="text-3xl font-bold mb-4">Vil du jobbe med oss?</h2>
+          <h2 className="text-3xl font-bold mb-4">Trenger møblene dine en oppfriskning?</h2>
           <p className="text-xl text-blue-100 mb-8">
-            Vi er alltid interesserte i dyktige folk med serviceinnstilling.
-            Ta kontakt for en uformell prat.
+            Få et gratis og uforpliktende tilbud. Vi svarer raskt.
           </p>
           <Link
             href="/kontakt"

@@ -1,0 +1,17 @@
+{
+  "title": "Tepperens",
+  "shortDescription": "Grundig rengjøring av tepper og ryer. Vi fjerner dypt sittende smuss, flekker og allergener fra alle typer tepper.",
+  "description": [
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "text": "Tepper fanger opp støv, skitt og allergener som vanlig støvsuging ikke tar. Vi bruker profesjonelt ekstraksjonsutstyr som vasker dypt inn i fibrene og suger ut alt smuss. Resultatet er et renere, friskere teppe som varer lenger."
+        }
+      ]
+    }
+  ],
+  "icon": "sparkle",
+  "featured": true,
+  "sortOrder": 2
+}

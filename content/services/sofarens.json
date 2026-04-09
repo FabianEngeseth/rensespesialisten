@@ -1,0 +1,17 @@
+{
+  "title": "Sofarens",
+  "shortDescription": "Profesjonell dyprengjøring av sofaer og stoler. Vi fjerner flekker, lukt og allergener — sofaen ser ut som ny.",
+  "description": [
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "text": "En sofa samler opp mye over tid: flekker, støv, husstøvmidd og lukt. Vår profesjonelle dyprengjøring trekker ut alt det du ikke ser, og gir sofaen din nytt liv. Vi behandler stoff, mikrofiber og de fleste tekstiler."
+        }
+      ]
+    }
+  ],
+  "icon": "home",
+  "featured": true,
+  "sortOrder": 1
+}

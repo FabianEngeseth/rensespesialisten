@@ -3,9 +3,9 @@ import Link from "next/link";
 import { reader } from "@/lib/reader";
 
 export const metadata: Metadata = {
-  title: "Profesjonell rengjøring i Namdalen",
+  title: "Profesjonell møbelrens og tekstilvask i Namdalen",
   description:
-    "Rensespesialisten leverer grundig og pålitelig rengjøring til private og bedrifter i Namdalen. Hjemvask, kontorrenhold, flyttevask og mer.",
+    "Rensespesialisten gir nytt liv til møbler og tekstiler i Namdalen. Sofarens, tepperens, madrassrens og bilinteriørrens — rett hjem til deg.",
 };
 
 const serviceIcons: Record<string, React.ReactNode> = {
@@ -162,11 +162,11 @@ export default async function HomePage() {
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">
-                Hva vi tilbyr
+                Våre tjenester
               </h2>
               <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-                Vi leverer profesjonell rengjøring tilpasset ditt behov — alt fra
-                fast hjemvask til storengjøring og flyttevask.
+                Vi er spesialister på dyprengjøring av møbler og tekstiler.
+                Alt fra sofaer og tepper til madrasser og bilinteriør.
               </p>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">

@@ -1,0 +1,17 @@
+{
+  "title": "Madrassrens",
+  "shortDescription": "Dyprengjøring av madrasser for bedre søvn og hygiene. Vi fjerner husstøvmidd, svette og flekker.",
+  "description": [
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "text": "Du tilbringer en tredjedel av livet i sengen. Over tid samler madrassen opp svette, hudceller og husstøvmidd. Vår dyprengjøring fjerner alt dette og gir deg en ferskere, mer hygienisk madrass — uten at du trenger å kjøpe ny."
+        }
+      ]
+    }
+  ],
+  "icon": "calendar",
+  "featured": true,
+  "sortOrder": 3
+}

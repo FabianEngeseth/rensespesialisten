@@ -1,12 +1,12 @@
 {
   "heading": "Om Rensespesialisten",
-  "intro": "Vi er et lokalt rengjøringsselskap med base i Namdalen. Vår misjon er å levere topp kvalitet til hjemmet og arbeidsplassen din — slik at du kan bruke tid på det som betyr noe.",
+  "intro": "Vi er spesialister på dyprengjøring av møbler, tepper og tekstiler i Namdalen. Med profesjonelt utstyr og lang erfaring gir vi nytt liv til det du allerede har — i stedet for å kjøpe nytt.",
   "body": [
     {
       "type": "paragraph",
       "children": [
         {
-          "text": "Rensespesialisten ble etablert med ett mål: å gi deg en ren og trivelig hverdag uten at du behøver å løfte en finger. Vi er stolte av det vi gjør og tar ansvar for hvert eneste oppdrag."
+          "text": "Rensespesialisten ble startet fordi vi så et behov: folk kaster sofaer, tepper og madrasser som fint kunne vært reddet med en skikkelig dyprengjøring. Vi kommer hjem til deg med profesjonelt utstyr og gjør jobben på stedet."
         }
       ]
     },
@@ -14,23 +14,23 @@
       "type": "paragraph",
       "children": [
         {
-          "text": "Vi jobber for både private husholdninger og bedrifter i hele Namdalen. Enten det er fast ukentlig rengjøring, grundig storengjøring eller flyttevask — vi stiller med erfarne folk og profesjonelt utstyr."
+          "text": "Vi jobber for både private og bedrifter i hele Namdalen og Nærøysund-regionen. Enten det er en flekkete sofa, et teppe som trenger oppfriskning eller bilinteriør som skal friskes opp — vi har utstyret og kunnskapen til å fikse det."
         }
       ]
     }
   ],
   "values": [
     {
-      "title": "Pålitelighet",
-      "description": "Vi møter opp til avtalt tid og leverer det vi lover — hver gang."
+      "title": "Spesialkompetanse",
+      "description": "Vi er ikke et vanlig rengjøringsfirma — vi er spesialister på møbler og tekstiler, med utstyr og metoder tilpasset hvert materiale."
     },
     {
-      "title": "Grundighet",
-      "description": "Vi tar oss god tid og sørger for at ingenting blir oversett."
+      "title": "Hjemmeservice",
+      "description": "Vi kommer til deg. Ingen behov for å frakte møbler — vi gjør jobben på stedet med profesjonelt utstyr."
     },
     {
       "title": "Lokal forankring",
-      "description": "Vi kjenner Namdalen og er stolte av å jobbe i nærmiljøet vårt."
+      "description": "Vi kjenner Namdalen og er stolte av å betjene nærmiljøet vårt. Kort responstid og personlig oppfølging."
     }
   ]
 }
