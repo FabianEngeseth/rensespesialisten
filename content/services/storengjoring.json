@@ -1,0 +1,17 @@
+{
+  "title": "Storengjøring",
+  "shortDescription": "Grundig storengjøring av hele boligen eller næringslokal. Perfekt for vår/høst eller når det trengs ekstra innsats.",
+  "description": [
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "text": "Vi gjennomfører en total storengjøring der vi tar tak i alt som vanligvis ikke rekkes i den daglige rengjøringen — bak møbler, inne i skap, lyskilder og mye mer."
+        }
+      ]
+    }
+  ],
+  "icon": "calendar",
+  "featured": false,
+  "sortOrder": 5
+}

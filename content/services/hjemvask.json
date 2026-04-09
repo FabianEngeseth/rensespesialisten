@@ -1,0 +1,27 @@
+{
+  "title": "Hjemvask",
+  "shortDescription": "Fast og grundig rengjøring av boligen din. Tilpasset ditt behov — ukentlig, annenhver uke eller månedlig.",
+  "description": [
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "text": "Vi tar oss av hele boligen din — fra kjøkken og bad til soverom og stue. Du bestemmer hyppigheten, vi sørger for kvaliteten."
+        }
+      ]
+    },
+    {
+      "type": "unordered-list",
+      "children": [
+        { "type": "list-item", "children": [{ "text": "Støvsuging og mopping av alle gulv" }] },
+        { "type": "list-item", "children": [{ "text": "Rengjøring av kjøkken inkl. hvitevarer" }] },
+        { "type": "list-item", "children": [{ "text": "Grundig baderomsrengjøring" }] },
+        { "type": "list-item", "children": [{ "text": "Tørking av støv og overflater" }] },
+        { "type": "list-item", "children": [{ "text": "Tømming av søppel" }] }
+      ]
+    }
+  ],
+  "icon": "home",
+  "featured": true,
+  "sortOrder": 1
+}

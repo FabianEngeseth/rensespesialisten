@@ -1,0 +1,36 @@
+{
+  "heading": "Om Rensespesialisten",
+  "intro": "Vi er et lokalt rengjøringsselskap med base i Namdalen. Vår misjon er å levere topp kvalitet til hjemmet og arbeidsplassen din — slik at du kan bruke tid på det som betyr noe.",
+  "body": [
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "text": "Rensespesialisten ble etablert med ett mål: å gi deg en ren og trivelig hverdag uten at du behøver å løfte en finger. Vi er stolte av det vi gjør og tar ansvar for hvert eneste oppdrag."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "text": "Vi jobber for både private husholdninger og bedrifter i hele Namdalen. Enten det er fast ukentlig rengjøring, grundig storengjøring eller flyttevask — vi stiller med erfarne folk og profesjonelt utstyr."
+        }
+      ]
+    }
+  ],
+  "values": [
+    {
+      "title": "Pålitelighet",
+      "description": "Vi møter opp til avtalt tid og leverer det vi lover — hver gang."
+    },
+    {
+      "title": "Grundighet",
+      "description": "Vi tar oss god tid og sørger for at ingenting blir oversett."
+    },
+    {
+      "title": "Lokal forankring",
+      "description": "Vi kjenner Namdalen og er stolte av å jobbe i nærmiljøet vårt."
+    }
+  ]
+}

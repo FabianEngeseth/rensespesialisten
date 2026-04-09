@@ -1,0 +1,17 @@
+{
+  "title": "Vindusvask",
+  "shortDescription": "Rene vinduer gir mer lys og bedre trivsel. Vi vasker innvendig og utvendig — til private og næringsbygg.",
+  "description": [
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "text": "Profesjonell vindusvask med strekfritt resultat. Vi tar oss av alle typer vinduer, inkludert vanskelig tilgjengelige."
+        }
+      ]
+    }
+  ],
+  "icon": "window",
+  "featured": false,
+  "sortOrder": 4
+}
