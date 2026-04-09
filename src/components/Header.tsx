@@ -35,11 +35,7 @@ export default function Header({ phone, siteName }: HeaderProps) {
               fill="currentColor"
               className="w-7 h-7 text-blue-600"
             >
-              <path
-                fillRule="evenodd"
-                d="M9 4.5a.75.75 0 01.721.544l.813 2.846a3.75 3.75 0 002.576 2.576l2.846.813a.75.75 0 010 1.442l-2.846.813a3.75 3.75 0 00-2.576 2.576l-.813 2.846a.75.75 0 01-1.442 0l-.813-2.846a3.75 3.75 0 00-2.576-2.576l-2.846-.813a.75.75 0 010-1.442l2.846-.813A3.75 3.75 0 007.466 7.89l.813-2.846A.75.75 0 019 4.5z"
-                clipRule="evenodd"
-              />
+              <path fillRule="evenodd" d="M12 2.25c-2.429 4.29-6.75 7.687-6.75 11.25a6.75 6.75 0 1013.5 0c0-3.563-4.321-6.96-6.75-11.25z" clipRule="evenodd" />
             </svg>
             {siteName}
           </Link>

@@ -57,44 +57,24 @@ export default async function HomePage() {
 
   return (
     <>
-      {/* Hero — dark overlay style */}
-      <section className="relative bg-slate-900 text-white overflow-hidden">
-        {/* Background pattern (placeholder for real hero image) */}
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-blue-900/80 to-slate-800" />
-        <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\")" }} />
-        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
-          <div className="max-w-3xl">
-            {hero?.badge && (
-              <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-4 py-1.5 text-sm font-medium text-blue-200 mb-6 backdrop-blur-sm">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 text-blue-300">
-                  <path fillRule="evenodd" d="M11.54 22.351l.07.04.028.016a.76.76 0 00.723 0l.028-.015.071-.041a16.975 16.975 0 001.144-.742 19.58 19.58 0 002.683-2.282c1.944-2.003 3.5-4.697 3.5-8.327a8 8 0 10-16 0c0 3.63 1.556 6.326 3.5 8.327a19.58 19.58 0 002.682 2.282 16.975 16.975 0 001.145.742zM12 13.5a3 3 0 100-6 3 3 0 000 6z" clipRule="evenodd" />
-                </svg>
-                {hero.badge}
-              </div>
-            )}
-            <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+      {/* Hero — warm light design matching reference */}
+      <section className="relative overflow-hidden bg-stone-100">
+        {/* Background: ready for hero image — replace bg-stone-100 with <Image> when photo provided */}
+        <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/85 to-white/50" />
+        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28 lg:py-32">
+          <div className="max-w-2xl">
+            <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-slate-900 mb-6">
               {hero?.heading ?? "Profesjonell dyprengj\u00f8ring av m\u00f8bler og tekstiler"}
             </h1>
-            <p className="text-xl text-slate-300 leading-relaxed mb-8 max-w-2xl">
+            <p className="text-lg sm:text-xl text-slate-600 leading-relaxed mb-8 max-w-xl">
               {hero?.subheading ?? "Vi gir dine m\u00f8bler, tepper og bilinteri\u00f8r nytt liv. Sk\u00e5nsom og grundig rens med profesjonelt utstyr."}
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link
-                href="/kontakt"
-                className="inline-flex items-center justify-center px-8 py-4 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 transition-colors text-lg shadow-lg shadow-blue-600/25"
-              >
-                {hero?.ctaPrimaryText ?? "Book en rens"}
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 ml-2">
-                  <path fillRule="evenodd" d="M12.97 3.97a.75.75 0 011.06 0l7.5 7.5a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 11-1.06-1.06l6.22-6.22H3a.75.75 0 010-1.5h16.19l-6.22-6.22a.75.75 0 010-1.06z" clipRule="evenodd" />
-                </svg>
-              </Link>
-              <Link
-                href="/tjenester"
-                className="inline-flex items-center justify-center px-8 py-4 border-2 border-white/30 text-white font-semibold rounded-xl hover:bg-white/10 transition-colors text-lg"
-              >
-                {hero?.ctaSecondaryText ?? "Se tjenester"}
-              </Link>
-            </div>
+            <Link
+              href="/kontakt"
+              className="inline-flex items-center px-8 py-4 bg-blue-700 text-white font-semibold rounded-lg hover:bg-blue-800 transition-colors text-lg"
+            >
+              {hero?.ctaPrimaryText ?? "Book en rens"}
+            </Link>
           </div>
         </div>
       </section>
