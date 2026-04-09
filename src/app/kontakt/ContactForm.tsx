@@ -32,14 +32,14 @@ export default function ContactForm() {
 
   if (state === "success") {
     return (
-      <div className="bg-green-50 border border-green-200 rounded-2xl p-8 text-center">
-        <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-8 h-8 text-green-600">
-            <path fillRule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z" clipRule="evenodd" />
+      <div className="bg-emerald-50 border border-emerald-200 rounded-lg p-8 text-center">
+        <div className="w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-4">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-6 h-6 text-emerald-600">
+            <path fillRule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clipRule="evenodd" />
           </svg>
         </div>
-        <h3 className="text-xl font-bold text-green-800 mb-2">Takk for henvendelsen!</h3>
-        <p className="text-green-700">Vi tar kontakt med deg snarest.</p>
+        <h3 className="text-xl font-bold text-emerald-800 mb-2">Takk for henvendelsen!</h3>
+        <p className="text-emerald-700">Vi tar kontakt med deg snarest.</p>
       </div>
     );
   }
@@ -47,22 +47,22 @@ export default function ContactForm() {
   return (
     <form onSubmit={handleSubmit} className="space-y-5">
       <div>
-        <label htmlFor="name" className="block text-sm font-medium text-slate-700 mb-1.5">
-          Navn *
+        <label htmlFor="name" className="block text-sm font-medium text-slate-700 mb-1">
+          Navn
         </label>
         <input
           id="name"
           name="name"
           type="text"
           required
-          placeholder="Ditt navn"
-          className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-white text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
+          placeholder="Ditt fulle navn"
+          className="w-full px-4 py-3 rounded-md border border-slate-300 bg-white text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition"
         />
       </div>
 
       <div>
-        <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-1.5">
-          E-post *
+        <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-1">
+          E-post
         </label>
         <input
           id="email"
@@ -70,26 +70,26 @@ export default function ContactForm() {
           type="email"
           required
           placeholder="din@epost.no"
-          className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-white text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
+          className="w-full px-4 py-3 rounded-md border border-slate-300 bg-white text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition"
         />
       </div>
 
       <div>
-        <label htmlFor="message" className="block text-sm font-medium text-slate-700 mb-1.5">
-          Hva ønsker du å få renset? *
+        <label htmlFor="message" className="block text-sm font-medium text-slate-700 mb-1">
+          Hva ønsker du å få renset?
         </label>
         <textarea
           id="message"
           name="message"
           required
           rows={5}
-          placeholder="F.eks. sofa med flekker, tepper som trenger oppfriskning, bilseter..."
-          className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-white text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition resize-none"
+          placeholder="Beskriv hva du ønsker å få renset, f.eks. type møbel, antall, farge og eventuelle flekker..."
+          className="w-full px-4 py-3 rounded-md border border-slate-300 bg-white text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition resize-none"
         />
       </div>
 
       {state === "error" && (
-        <div className="bg-red-50 border border-red-200 rounded-xl p-4 text-sm text-red-700">
+        <div className="bg-red-50 border border-red-200 rounded-md p-4 text-sm text-red-700">
           Noe gikk galt. Ring oss direkte eller prøv igjen.
         </div>
       )}
@@ -97,7 +97,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={state === "loading"}
-        className="w-full py-4 bg-blue-700 text-white font-bold rounded-xl hover:bg-blue-800 disabled:opacity-60 disabled:cursor-not-allowed transition-colors text-lg"
+        className="w-full py-3.5 bg-emerald-700 text-white font-semibold rounded-md hover:bg-emerald-800 disabled:opacity-60 disabled:cursor-not-allowed transition-colors"
       >
         {state === "loading" ? "Sender..." : "Send forespørsel"}
       </button>

@@ -13,15 +13,18 @@ export default async function OmOssPage() {
 
   return (
     <>
-      {/* Header */}
-      <section className="bg-gradient-to-br from-blue-900 to-blue-700 text-white py-16">
+      {/* Page header */}
+      <section className="bg-white pt-16 pb-12">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl">
-            <p className="text-blue-300 text-sm font-medium uppercase tracking-wider mb-3">Om oss</p>
-            <h1 className="font-serif text-4xl sm:text-5xl font-bold mb-4">
+            <div className="flex items-center gap-3 mb-6">
+              <span className="h-px w-12 bg-emerald-600" />
+              <span className="text-sm font-medium tracking-widest uppercase text-emerald-700">Om oss</span>
+            </div>
+            <h1 className="font-serif text-4xl sm:text-5xl font-bold text-slate-900 mb-4">
               {about?.heading ?? "Om Rensespesialisten"}
             </h1>
-            <p className="text-xl text-blue-100 leading-relaxed">
+            <p className="text-xl text-slate-500 leading-relaxed">
               {about?.intro ??
                 "Vi er et lokalt rengjøringsselskap med base i Namdalen. Vår misjon er å levere topp kvalitet til hjemmet og arbeidsplassen din."}
             </p>
@@ -30,39 +33,38 @@ export default async function OmOssPage() {
       </section>
 
       {/* Main content */}
-      <section className="py-16 lg:py-24">
+      <section className="py-16 lg:py-24 border-t border-slate-100">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-3 gap-12">
-            <div className="lg:col-span-2 prose prose-lg prose-slate max-w-none">
-              <p className="text-slate-700 leading-relaxed text-lg">
-                Rensespesialisten ble startet fordi vi så et behov: folk kaster sofaer,
-                tepper og madrasser som fint kunne vært reddet med en skikkelig
+          <div className="grid lg:grid-cols-3 gap-16">
+            <div className="lg:col-span-2 space-y-6">
+              <p className="text-slate-600 leading-relaxed text-lg">
+                Rensespesialisten ble startet fordi vi s&aring; et behov: folk kaster sofaer,
+                tepper og madrasser som fint kunne v&aelig;rt reddet med en skikkelig
                 dyprengjøring. Vi kommer hjem til deg med profesjonelt utstyr og gjør
-                jobben på stedet.
+                jobben p&aring; stedet.
               </p>
-              <p className="text-slate-700 leading-relaxed">
-                Vi jobber for både private og bedrifter i hele Namdalen og
-                Nærøysund-regionen. Enten det er en flekkete sofa, et teppe som trenger
-                oppfriskning eller bilinteriør som skal friskes opp — vi har utstyret
+              <p className="text-slate-600 leading-relaxed">
+                Vi jobber for b&aring;de private og bedrifter i hele Namdalen og
+                N&aelig;r&oslash;ysund-regionen. Enten det er en flekkete sofa, et teppe som trenger
+                oppfriskning eller bilinteriør som skal friskes opp &mdash; vi har utstyret
                 og kunnskapen.
               </p>
-              <p className="text-slate-700 leading-relaxed">
-                Som lokal bedrift er vi opptatt av å bygge langvarige relasjoner.
-                Vi gir deg et konkret tilbud på forhånd, og du betaler ikke før du er
-                fornøyd med resultatet.
+              <p className="text-slate-600 leading-relaxed">
+                Som lokal bedrift er vi opptatt av &aring; bygge langvarige relasjoner.
+                Vi gir deg et konkret tilbud p&aring; forh&aring;nd, og du betaler ikke f&oslash;r du er
+                forn&oslash;yd med resultatet.
               </p>
             </div>
 
-            {/* Contact sidebar */}
-            <div className="lg:col-span-1">
-              <div className="bg-blue-50 rounded-2xl p-6 border border-blue-100">
-                <h3 className="font-bold text-slate-900 mb-4 text-lg">Ta kontakt</h3>
-                <p className="text-slate-600 text-sm mb-6">
-                  Har du spørsmål? Vi svarer raskt og gir deg et uforpliktende tilbud.
+            <div>
+              <div className="bg-emerald-50 rounded-lg p-6 border border-emerald-100">
+                <h3 className="font-semibold text-slate-900 mb-3">Ta kontakt</h3>
+                <p className="text-slate-500 text-sm mb-5">
+                  Har du sp&oslash;rsm&aring;l? Vi svarer raskt og gir deg et uforpliktende tilbud.
                 </p>
                 <Link
                   href="/kontakt"
-                  className="inline-flex items-center justify-center w-full px-4 py-3 bg-blue-700 text-white font-semibold rounded-xl hover:bg-blue-800 transition-colors"
+                  className="inline-flex items-center justify-center w-full px-4 py-3 bg-emerald-700 text-white font-medium rounded-md hover:bg-emerald-800 transition-colors text-sm"
                 >
                   Kontakt oss
                 </Link>
@@ -74,17 +76,19 @@ export default async function OmOssPage() {
 
       {/* Verdier */}
       {about?.values && about.values.length > 0 && (
-        <section className="py-16 bg-slate-50">
+        <section className="py-16 lg:py-24 bg-slate-50">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="font-serif text-3xl font-bold text-slate-900 mb-10 text-center">Våre verdier</h2>
-            <div className="grid sm:grid-cols-3 gap-6">
+            <div className="flex items-center gap-3 mb-4">
+              <span className="h-px w-12 bg-emerald-600" />
+              <span className="text-sm font-medium tracking-widest uppercase text-emerald-700">Verdier</span>
+            </div>
+            <h2 className="font-serif text-3xl sm:text-4xl font-bold text-slate-900 mb-12">V&aring;re verdier</h2>
+            <div className="grid sm:grid-cols-3 gap-8">
               {about.values.map((value, i) => (
-                <div key={i} className="bg-white rounded-2xl p-8 shadow-sm border border-slate-100 text-center">
-                  <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <span className="text-blue-700 font-bold text-lg">{i + 1}</span>
-                  </div>
-                  <h3 className="font-bold text-xl text-slate-900 mb-3">{value.title}</h3>
-                  <p className="text-slate-600 leading-relaxed">{value.description}</p>
+                <div key={i}>
+                  <span className="text-emerald-600 font-bold text-sm">0{i + 1}</span>
+                  <h3 className="font-bold text-xl text-slate-900 mt-2 mb-3">{value.title}</h3>
+                  <p className="text-slate-500 leading-relaxed">{value.description}</p>
                 </div>
               ))}
             </div>
@@ -93,15 +97,15 @@ export default async function OmOssPage() {
       )}
 
       {/* CTA */}
-      <section className="py-16 bg-blue-800">
+      <section className="py-20 bg-emerald-900">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
-          <h2 className="font-serif text-3xl font-bold mb-4">Trenger møblene dine en oppfriskning?</h2>
-          <p className="text-xl text-blue-100 mb-8">
-            Få et gratis og uforpliktende tilbud. Vi svarer raskt.
+          <h2 className="font-serif text-3xl sm:text-4xl font-bold mb-4">Trenger m&oslash;blene dine en oppfriskning?</h2>
+          <p className="text-lg text-emerald-200 mb-8">
+            F&aring; et gratis og uforpliktende tilbud. Vi svarer raskt.
           </p>
           <Link
             href="/kontakt"
-            className="inline-flex items-center justify-center px-8 py-4 bg-white text-blue-800 font-bold rounded-xl hover:bg-blue-50 transition-colors text-lg"
+            className="inline-flex items-center px-8 py-3.5 bg-white text-emerald-900 font-semibold rounded-md hover:bg-emerald-50 transition-colors"
           >
             Send oss en melding
           </Link>
