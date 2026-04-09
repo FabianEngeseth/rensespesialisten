@@ -46,32 +46,18 @@ export default function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-5">
-      <div className="grid sm:grid-cols-2 gap-5">
-        <div>
-          <label htmlFor="name" className="block text-sm font-medium text-slate-700 mb-1.5">
-            Navn *
-          </label>
-          <input
-            id="name"
-            name="name"
-            type="text"
-            required
-            placeholder="Ditt navn"
-            className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-white text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
-          />
-        </div>
-        <div>
-          <label htmlFor="phone" className="block text-sm font-medium text-slate-700 mb-1.5">
-            Telefon
-          </label>
-          <input
-            id="phone"
-            name="phone"
-            type="tel"
-            placeholder="Ditt telefonnummer"
-            className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-white text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
-          />
-        </div>
+      <div>
+        <label htmlFor="name" className="block text-sm font-medium text-slate-700 mb-1.5">
+          Navn *
+        </label>
+        <input
+          id="name"
+          name="name"
+          type="text"
+          required
+          placeholder="Ditt navn"
+          className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-white text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
+        />
       </div>
 
       <div>
@@ -89,34 +75,15 @@ export default function ContactForm() {
       </div>
 
       <div>
-        <label htmlFor="service" className="block text-sm font-medium text-slate-700 mb-1.5">
-          Hva trenger du hjelp med?
-        </label>
-        <select
-          id="service"
-          name="service"
-          className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-white text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
-        >
-          <option value="">Velg tjeneste (valgfri)</option>
-          <option value="hjemvask">Hjemvask</option>
-          <option value="kontorrenhold">Kontorrenhold</option>
-          <option value="flyttevask">Flyttevask</option>
-          <option value="vindusvask">Vindusvask</option>
-          <option value="storengjoring">Storengjøring</option>
-          <option value="annet">Annet</option>
-        </select>
-      </div>
-
-      <div>
         <label htmlFor="message" className="block text-sm font-medium text-slate-700 mb-1.5">
-          Melding *
+          Hva ønsker du å få renset? *
         </label>
         <textarea
           id="message"
           name="message"
           required
           rows={5}
-          placeholder="Beskriv hva du trenger hjelp med, adresse, ønsket tidspunkt osv."
+          placeholder="F.eks. sofa med flekker, tepper som trenger oppfriskning, bilseter..."
           className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-white text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition resize-none"
         />
       </div>
@@ -132,12 +99,8 @@ export default function ContactForm() {
         disabled={state === "loading"}
         className="w-full py-4 bg-blue-700 text-white font-bold rounded-xl hover:bg-blue-800 disabled:opacity-60 disabled:cursor-not-allowed transition-colors text-lg"
       >
-        {state === "loading" ? "Sender..." : "Send melding"}
+        {state === "loading" ? "Sender..." : "Send forespørsel"}
       </button>
-
-      <p className="text-xs text-slate-500 text-center">
-        Vi svarer normalt innen noen timer i arbeidstiden.
-      </p>
     </form>
   );
 }

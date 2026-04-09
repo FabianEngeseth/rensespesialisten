@@ -5,7 +5,7 @@ import { reader } from "@/lib/reader";
 export const metadata: Metadata = {
   title: "Tjenester",
   description:
-    "Se alle tjenestene vi tilbyr: sofarens, tepperens, madrassrens, bilinteriørrens og skinnpleie i Namdalen.",
+    "Se alle tjenestene vi tilbyr: tepperens, sofarens, stolrens, bilinteriørrens og bobil-rens i Namdalen.",
 };
 
 const serviceIcons: Record<string, React.ReactNode> = {
@@ -55,7 +55,7 @@ export default async function TjenesterPage() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl">
             <p className="text-blue-300 text-sm font-medium uppercase tracking-wider mb-3">Tjenester</p>
-            <h1 className="text-4xl sm:text-5xl font-bold mb-4">Våre tjenester</h1>
+            <h1 className="font-serif text-4xl sm:text-5xl font-bold mb-4">Våre tjenester</h1>
             <p className="text-xl text-blue-100">
               Profesjonell dyprengjøring av møbler, tepper og tekstiler.
               Vi kommer hjem til deg med alt utstyr.
@@ -80,7 +80,7 @@ export default async function TjenesterPage() {
                   <div className="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center text-blue-700 mb-6">
                     {serviceIcons[service.entry.icon] ?? serviceIcons.sparkle}
                   </div>
-                  <h2 className="text-3xl font-bold text-slate-900 mb-4">
+                  <h2 className="font-serif text-3xl font-bold text-slate-900 mb-4">
                     {service.entry.title}
                   </h2>
                   <p className="text-lg text-slate-600 mb-6 leading-relaxed">
@@ -132,7 +132,7 @@ export default async function TjenesterPage() {
       {/* CTA */}
       <section className="py-16 bg-blue-800">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
-          <h2 className="text-3xl font-bold mb-4">Usikker på hvilken tjeneste du trenger?</h2>
+          <h2 className="font-serif text-3xl font-bold mb-4">Usikker på hvilken tjeneste du trenger?</h2>
           <p className="text-xl text-blue-100 mb-8">
             Ta kontakt — vi hjelper deg med å finne den beste løsningen.
           </p>

@@ -1,0 +1,17 @@
+{
+  "title": "Sofaer",
+  "shortDescription": "Fjerning av flekker og oppfrisking av sofaer. Vi gir sofaen din nytt liv med profesjonell dyprengj\u00f8ring.",
+  "description": [
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "text": "En sofa samler opp mye over tid: flekker, st\u00f8v, husstøvmidd og lukt. V\u00e5r profesjonelle dyprengj\u00f8ring trekker ut alt det du ikke ser, og gir sofaen din nytt liv. Vi behandler stoff, mikrofiber og de fleste tekstiler."
+        }
+      ]
+    }
+  ],
+  "icon": "home",
+  "featured": true,
+  "sortOrder": 3
+}

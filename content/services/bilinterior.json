@@ -1,17 +1,17 @@
 {
-  "title": "Bilinteriørrens",
-  "shortDescription": "Profesjonell rengjøring av bilseter, tepper og interiør. Fjerner flekker, lukt og gir bilen en ny følelse.",
+  "title": "Bilinteri\u00f8r",
+  "shortDescription": "Komplett rens av bilseter og gulv. Vi fjerner flekker, lukt og smuss \u2014 bilen f\u00f8les som ny.",
   "description": [
     {
       "type": "paragraph",
       "children": [
         {
-          "text": "Bilinteriøret utsettes for mye slitasje — mat, drikke, barn, kjæledyr. Vi rengjør seter, dørkledninger, taktrekk og gulvtepper med profesjonelt utstyr. Resultatet er en bil som lukter og føles som ny igjen."
+          "text": "Bilinteri\u00f8ret utsettes for mye slitasje \u2014 mat, drikke, barn, kj\u00e6ledyr. Vi rengj\u00f8r seter, d\u00f8rkledninger, taktrekk og gulvtepper med profesjonelt utstyr. Resultatet er en bil som lukter og f\u00f8les som ny igjen."
         }
       ]
     }
   ],
   "icon": "window",
   "featured": true,
-  "sortOrder": 4
+  "sortOrder": 5
 }

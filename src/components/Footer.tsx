@@ -5,6 +5,7 @@ interface FooterProps {
   phone: string;
   email: string;
   address: string;
+  orgNumber?: string;
   openingHoursWeekdays: string;
   openingHoursWeekend: string;
   facebookUrl?: string | null;
@@ -14,7 +15,7 @@ export default function Footer({
   siteName,
   phone,
   email,
-  address,
+  orgNumber,
   openingHoursWeekdays,
   openingHoursWeekend,
   facebookUrl,
@@ -22,20 +23,23 @@ export default function Footer({
   return (
     <footer className="bg-slate-900 text-slate-300">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* Brand */}
-          <div className="lg:col-span-2">
+          <div>
             <p className="font-bold text-xl text-white mb-3">{siteName}</p>
             <p className="text-slate-400 text-sm leading-relaxed mb-4">
-              Profesjonell rengjøring til private og bedrifter i Namdalen.
-              Pålitelig, grundig og til rett pris.
+              Profesjonell dyprengj&oslash;ring av m&oslash;bler og tekstiler.
+            </p>
+            <p className="text-slate-400 text-sm leading-relaxed">
+              Vi kommer til deg &ndash; tjenesten utf&oslash;res der m&oslash;blene befinner seg.
+              Ingen stress med transport.
             </p>
             {facebookUrl && (
               <a
                 href={facebookUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 text-sm transition-colors"
+                className="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 text-sm transition-colors mt-4"
               >
                 <svg
                   className="w-5 h-5"
@@ -78,12 +82,6 @@ export default function Footer({
                   {email}
                 </a>
               </li>
-              <li className="flex items-start gap-2">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 text-blue-400 shrink-0 mt-0.5">
-                  <path fillRule="evenodd" d="M11.54 22.351l.07.04.028.016a.76.76 0 00.723 0l.028-.015.071-.041a16.975 16.975 0 001.144-.742 19.58 19.58 0 002.683-2.282c1.944-2.003 3.5-4.697 3.5-8.327a8 8 0 10-16 0c0 3.63 1.556 6.326 3.5 8.327a19.58 19.58 0 002.682 2.282 16.975 16.975 0 001.145.742zM12 13.5a3 3 0 100-6 3 3 0 000 6z" clipRule="evenodd" />
-                </svg>
-                {address}
-              </li>
             </ul>
           </div>
 
@@ -102,12 +100,17 @@ export default function Footer({
 
         {/* Bottom bar */}
         <div className="border-t border-slate-800 mt-10 pt-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-slate-500">
-          <p>
-            &copy; {new Date().getFullYear()} {siteName}. Alle rettigheter forbeholdt.
-          </p>
+          <div className="flex flex-col sm:flex-row items-center gap-2">
+            <p>
+              &copy; {new Date().getFullYear()} {siteName}. Alle rettigheter forbeholdt.
+            </p>
+            {orgNumber && (
+              <span className="text-slate-600">Org.nr: {orgNumber}</span>
+            )}
+          </div>
           <div className="flex items-center gap-4">
-            <Link href="/om-oss" className="hover:text-slate-300 transition-colors">
-              Om oss
+            <Link href="/tjenester" className="hover:text-slate-300 transition-colors">
+              Tjenester
             </Link>
             <Link href="/kontakt" className="hover:text-slate-300 transition-colors">
               Kontakt

@@ -10,9 +10,9 @@ interface HeaderProps {
 }
 
 const navLinks = [
-  { href: "/", label: "Hjem" },
   { href: "/tjenester", label: "Tjenester" },
-  { href: "/om-oss", label: "Om oss" },
+  { href: "/#resultater", label: "Resultater" },
+  { href: "/#omtaler", label: "Omtaler" },
   { href: "/kontakt", label: "Kontakt" },
 ];
 
@@ -35,7 +35,11 @@ export default function Header({ phone, siteName }: HeaderProps) {
               fill="currentColor"
               className="w-7 h-7 text-blue-600"
             >
-              <path d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z" />
+              <path
+                fillRule="evenodd"
+                d="M9 4.5a.75.75 0 01.721.544l.813 2.846a3.75 3.75 0 002.576 2.576l2.846.813a.75.75 0 010 1.442l-2.846.813a3.75 3.75 0 00-2.576 2.576l-.813 2.846a.75.75 0 01-1.442 0l-.813-2.846a3.75 3.75 0 00-2.576-2.576l-2.846-.813a.75.75 0 010-1.442l2.846-.813A3.75 3.75 0 007.466 7.89l.813-2.846A.75.75 0 019 4.5z"
+                clipRule="evenodd"
+              />
             </svg>
             {siteName}
           </Link>
@@ -81,7 +85,7 @@ export default function Header({ phone, siteName }: HeaderProps) {
               href="/kontakt"
               className="hidden sm:inline-flex items-center px-4 py-2 bg-blue-700 text-white text-sm font-semibold rounded-lg hover:bg-blue-800 transition-colors"
             >
-              Få tilbud
+              Kontakt oss
             </Link>
             <button
               onClick={() => setMenuOpen(!menuOpen)}
@@ -128,13 +132,6 @@ export default function Header({ phone, siteName }: HeaderProps) {
                 </svg>
                 Ring oss: {phone}
               </a>
-              <Link
-                href="/kontakt"
-                onClick={() => setMenuOpen(false)}
-                className="mx-4 mt-2 inline-flex justify-center px-4 py-3 bg-blue-700 text-white text-sm font-semibold rounded-lg hover:bg-blue-800 transition-colors"
-              >
-                Få gratis tilbud
-              </Link>
             </nav>
           </div>
         )}

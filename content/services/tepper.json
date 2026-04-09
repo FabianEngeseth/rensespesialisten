@@ -1,0 +1,17 @@
+{
+  "title": "Tepper",
+  "shortDescription": "Dyprengj\u00f8ring av alle typer tepper. Vi fjerner dypt sittende smuss, flekker og allergener \u2014 teppet blir som nytt.",
+  "description": [
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "text": "Tepper fanger opp st\u00f8v, skitt og allergener som vanlig st\u00f8vsuging ikke tar. Vi bruker profesjonelt ekstraksjonsutstyr som vasker dypt inn i fibrene og suger ut alt smuss. Resultatet er et renere, friskere teppe som varer lenger."
+        }
+      ]
+    }
+  ],
+  "icon": "sparkle",
+  "featured": true,
+  "sortOrder": 1
+}

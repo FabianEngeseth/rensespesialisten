@@ -18,7 +18,7 @@ export default async function OmOssPage() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl">
             <p className="text-blue-300 text-sm font-medium uppercase tracking-wider mb-3">Om oss</p>
-            <h1 className="text-4xl sm:text-5xl font-bold mb-4">
+            <h1 className="font-serif text-4xl sm:text-5xl font-bold mb-4">
               {about?.heading ?? "Om Rensespesialisten"}
             </h1>
             <p className="text-xl text-blue-100 leading-relaxed">
@@ -76,7 +76,7 @@ export default async function OmOssPage() {
       {about?.values && about.values.length > 0 && (
         <section className="py-16 bg-slate-50">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-slate-900 mb-10 text-center">Våre verdier</h2>
+            <h2 className="font-serif text-3xl font-bold text-slate-900 mb-10 text-center">Våre verdier</h2>
             <div className="grid sm:grid-cols-3 gap-6">
               {about.values.map((value, i) => (
                 <div key={i} className="bg-white rounded-2xl p-8 shadow-sm border border-slate-100 text-center">
@@ -95,7 +95,7 @@ export default async function OmOssPage() {
       {/* CTA */}
       <section className="py-16 bg-blue-800">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
-          <h2 className="text-3xl font-bold mb-4">Trenger møblene dine en oppfriskning?</h2>
+          <h2 className="font-serif text-3xl font-bold mb-4">Trenger møblene dine en oppfriskning?</h2>
           <p className="text-xl text-blue-100 mb-8">
             Få et gratis og uforpliktende tilbud. Vi svarer raskt.
           </p>

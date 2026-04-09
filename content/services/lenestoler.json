@@ -1,0 +1,17 @@
+{
+  "title": "Lenestoler",
+  "shortDescription": "Grundig rens av polstrede stoler. Vi fjerner flekker, lukt og allergener \u2014 stolen f\u00e5r nytt liv.",
+  "description": [
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "text": "Lenestoler brukes mye og samler opp smuss over tid. V\u00e5r profesjonelle dyprengj\u00f8ring trekker ut flekker, st\u00f8v og lukt fra dypt i polstringen. Resultatet er en ferskere, hygienisk stol du kan nyte igjen."
+        }
+      ]
+    }
+  ],
+  "icon": "home",
+  "featured": true,
+  "sortOrder": 2
+}

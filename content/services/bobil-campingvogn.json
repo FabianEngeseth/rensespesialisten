@@ -1,0 +1,17 @@
+{
+  "title": "Bobil & Campingvogn",
+  "shortDescription": "Innvendig tekstilrens av bobil og campingvogn. Vi fjerner lukt, fukt og smuss fra seter, puter og tepper.",
+  "description": [
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "text": "Bobiler og campingvogner st\u00e5r ofte stille i lange perioder og kan utvikle fuktlukt og mugg i tekstilene. Vi renser seter, puter, gardiner og tepper grundig slik at du kan nyte turen uten ubehagelig lukt."
+        }
+      ]
+    }
+  ],
+  "icon": "calendar",
+  "featured": true,
+  "sortOrder": 6
+}

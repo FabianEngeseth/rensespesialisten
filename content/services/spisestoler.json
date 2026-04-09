@@ -1,0 +1,17 @@
+{
+  "title": "Spisestoler",
+  "shortDescription": "Rens av tekstiltrukne spisestoler. Vi fjerner matsøl, flekker og hverdagsslitasje \u2014 stolene blir pene igjen.",
+  "description": [
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "text": "Spisestoler med tekstiltrekk f\u00e5r mye juling i hverdagen. Mats\u00f8l, flekker og generell slitasje setter sitt preg. Vi renser grundig med profesjonelt utstyr slik at stolene ser pene og innbydende ut igjen."
+        }
+      ]
+    }
+  ],
+  "icon": "office",
+  "featured": true,
+  "sortOrder": 4
+}

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist } from "next/font/google";
+import { Playfair_Display } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -10,16 +11,22 @@ const geistSans = Geist({
   subsets: ["latin"],
 });
 
+const playfair = Playfair_Display({
+  variable: "--font-playfair",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+});
+
 export async function generateMetadata(): Promise<Metadata> {
   const settings = await reader.singletons.settings.read();
   return {
     title: {
       template: `%s | ${settings?.siteName ?? "Rensespesialisten"}`,
-      default: `${settings?.siteName ?? "Rensespesialisten"} — ${settings?.tagline ?? "Profesjonell rengjøring i Namdalen"}`,
+      default: `${settings?.siteName ?? "Rensespesialisten"} — ${settings?.tagline ?? "Profesjonell dyprengj\u00f8ring av m\u00f8bler og tekstiler"}`,
     },
     description:
       settings?.tagline ??
-      "Profesjonell rengjøring til private og bedrifter i Namdalen. Pålitelig, grundig og til rett pris.",
+      "Profesjonell dyprengj\u00f8ring av m\u00f8bler og tekstiler i Namdalen.",
     openGraph: {
       siteName: settings?.siteName ?? "Rensespesialisten",
       locale: "nb_NO",
@@ -36,7 +43,7 @@ export default async function RootLayout({
   const settings = await reader.singletons.settings.read();
 
   return (
-    <html lang="nb" className={`${geistSans.variable} h-full antialiased`}>
+    <html lang="nb" className={`${geistSans.variable} ${playfair.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col">
         <Header
           siteName={settings?.siteName ?? "Rensespesialisten"}
@@ -48,6 +55,7 @@ export default async function RootLayout({
           phone={settings?.phone ?? ""}
           email={settings?.email ?? ""}
           address={settings?.address ?? ""}
+          orgNumber={settings?.orgNumber ?? ""}
           openingHoursWeekdays={settings?.openingHoursWeekdays ?? ""}
           openingHoursWeekend={settings?.openingHoursWeekend ?? ""}
           facebookUrl={settings?.facebookUrl}
