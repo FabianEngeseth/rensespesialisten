@@ -39,3 +39,14 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# superpowers brainstorm sessions
+.superpowers/
+
+# Playwright-testkjøringer og screenshots i rot
+.playwright-mcp/
+/*.png
+
+# Kildematerial for bilder/video (høyoppløselige originaler — komprimerte versjoner ligger i public/)
+/pictures/
+
