@@ -51,7 +51,7 @@ const problems = [
 
 export default function CommonProblems() {
   return (
-    <section id="utfordringer" className="py-24 lg:py-32 bg-cream-50 relative">
+    <section id="utfordringer" className="py-24 lg:py-32 bg-cream-100 relative">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-2xl mb-14">
           <div className="flex items-center gap-3 mb-4">
