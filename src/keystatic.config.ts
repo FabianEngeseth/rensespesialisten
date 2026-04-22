@@ -97,6 +97,7 @@ export default config({
       label: "Tjenester",
       path: "content/services/*",
       slugField: "title",
+      format: { data: "json" },
       schema: {
         title: fields.slug({ name: { label: "Tittel" } }),
         shortDescription: fields.text({
@@ -130,11 +131,15 @@ export default config({
       label: "Kundeomtaler",
       path: "content/testimonials/*",
       slugField: "name",
+      format: { data: "json" },
       schema: {
         name: fields.slug({ name: { label: "Navn" } }),
         location: fields.text({ label: "Sted/bedrift" }),
         text: fields.text({ label: "Omtale", multiline: true }),
         rating: fields.number({ label: "Rangering (1–5)", defaultValue: 5 }),
+        photo: fields.text({
+          label: "Foto-sti (valgfri, f.eks. /omtale-rita.jpg)",
+        }),
       },
     }),
   },
