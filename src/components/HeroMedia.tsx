@@ -3,8 +3,9 @@
 import { useState, useRef, useEffect } from "react";
 
 /**
- * Plasseres inne i en portrett-aspect-container (f.eks. aspect-[3/4]).
- * Spiller én gang, fader så over til /hero-bil.jpg (3:4) som blir værende.
+ * Plasseres inne i en relative-container som fyller hero-bakgrunnen.
+ * Spiller én gang, fader så over til /hero-bil-hus.jpg (bilen foran huset)
+ * slik at overgangen oppleves som en naturlig forlengelse av videoen.
  */
 export default function HeroMedia() {
   const [ended, setEnded] = useState(false);
@@ -22,8 +23,8 @@ export default function HeroMedia() {
   return (
     <>
       <img
-        src="/hero-bil.jpg"
-        alt="Rensespesialisten-bilen med Daniel og hund i Namdalen"
+        src="/hero-bil-hus.jpg"
+        alt="Rensespesialisten-bilen parkert foran huset"
         className="absolute inset-0 w-full h-full object-cover"
       />
       <video

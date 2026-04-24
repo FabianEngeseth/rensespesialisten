@@ -12,9 +12,10 @@ interface HeaderProps {
 const navLinks = [
   { href: "/#tjenester", label: "Tjenester" },
   { href: "/#priser", label: "Priser" },
-  { href: "/#omrade", label: "Område" },
+  { href: "/#omtaler", label: "Omtaler" },
   { href: "/#bedrift", label: "Bedrift" },
-  { href: "/#faq", label: "FAQ" },
+  { href: "/#om-oss", label: "Om oss" },
+  { href: "/faq", label: "FAQ" },
 ];
 
 export default function Header({ phone, siteName }: HeaderProps) {
@@ -32,7 +33,7 @@ export default function Header({ phone, siteName }: HeaderProps) {
             {siteName}
           </Link>
 
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden lg:flex items-center gap-6">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
@@ -69,7 +70,7 @@ export default function Header({ phone, siteName }: HeaderProps) {
             </Link>
             <button
               onClick={() => setMenuOpen(!menuOpen)}
-              className="md:hidden p-2 text-forest-800/60 hover:text-forest-950 transition-colors"
+              className="lg:hidden p-2 text-forest-800/60 hover:text-forest-950 transition-colors"
               aria-label="Meny"
             >
               {menuOpen ? (
@@ -86,7 +87,7 @@ export default function Header({ phone, siteName }: HeaderProps) {
         </div>
 
         {menuOpen && (
-          <div className="md:hidden pb-4 border-t border-forest-900/10 pt-3">
+          <div className="lg:hidden pb-4 border-t border-forest-900/10 pt-3">
             <nav className="flex flex-col gap-1">
               {navLinks.map((link) => (
                 <Link

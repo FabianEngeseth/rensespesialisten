@@ -80,13 +80,13 @@ export default function BusinessQuoteForm() {
         >
           Ønsket frekvens
         </label>
-        <div className="grid grid-cols-2 sm:grid-cols-5 gap-2">
+        <div className="flex flex-wrap gap-2">
           {frequencyOptions.map((opt) => (
             <button
               key={opt.value}
               type="button"
               onClick={() => setFrequency(opt.value)}
-              className={`px-3 py-2.5 rounded-lg text-sm font-medium transition-colors border ${
+              className={`px-4 py-2.5 rounded-lg text-sm font-medium transition-colors border ${
                 frequency === opt.value
                   ? "bg-amber-accent text-forest-950 border-amber-accent"
                   : "bg-forest-950/40 text-cream-100/80 border-forest-700 hover:border-amber-accent/60"
