@@ -31,6 +31,25 @@ export default async function HomePage() {
     <>
       {/* ── 1. HERO — tekst venstre, mykt feathered media på høyre side ── */}
       <section className="relative bg-cream-50 overflow-hidden">
+        {/* Varm bakgrunns-gradient — cream-50 til venstre, dypere cream/amber mot høyre */}
+        <div
+          aria-hidden
+          className="absolute inset-0 bg-gradient-to-br from-cream-50 via-cream-100 to-amber-accent/10"
+        />
+        {/* Myke fargeblobber som gir rolig dybde */}
+        <div
+          aria-hidden
+          className="absolute -top-40 -left-32 w-[520px] h-[520px] rounded-full bg-forest-100/35 blur-3xl"
+        />
+        <div
+          aria-hidden
+          className="absolute -bottom-48 right-[12%] w-[460px] h-[460px] rounded-full bg-amber-accent/15 blur-3xl"
+        />
+        <div
+          aria-hidden
+          className="hidden lg:block absolute top-1/4 right-[6%] w-[360px] h-[360px] rounded-full bg-forest-200/25 blur-3xl"
+        />
+
         {/* Feathered media: mykt innfelt høyre side, smelter inn i cream via radial maske */}
         <div
           aria-hidden
