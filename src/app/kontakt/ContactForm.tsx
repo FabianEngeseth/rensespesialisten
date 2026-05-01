@@ -14,10 +14,15 @@ export default function ContactForm() {
     const data = new FormData(form);
 
     try {
-      const res = await fetch("https://formspree.io/f/placeholder", {
+      const res = await fetch("/api/booking", {
         method: "POST",
-        body: data,
-        headers: { Accept: "application/json" },
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: data.get("name"),
+          email: data.get("email"),
+          message: data.get("message"),
+          website: data.get("website"),
+        }),
       });
       if (res.ok) {
         setState("success");
@@ -46,6 +51,14 @@ export default function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-5">
+      <input
+        type="text"
+        name="website"
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+        className="absolute left-[-9999px] w-px h-px opacity-0 pointer-events-none"
+      />
       <div>
         <label htmlFor="name" className="block text-sm font-medium text-slate-700 mb-1">
           Navn
