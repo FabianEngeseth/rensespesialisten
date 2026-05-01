@@ -187,13 +187,13 @@ function PairImage({
   const aspectClass =
     aspect === "portrait" ? "aspect-[4/5]" : "aspect-[5/4]";
   return (
-    <div className={`relative ${aspectClass} bg-forest-100`}>
+    <div className={`relative ${aspectClass} bg-cream-50`}>
       <Image
         src={src}
         alt={alt}
         fill
         sizes="(min-width: 1024px) 384px, 50vw"
-        className="object-cover"
+        className="object-contain object-center"
         priority={priority}
       />
       <div className="absolute top-3 left-3 sm:top-4 sm:left-4 text-[10px] sm:text-xs font-semibold tracking-widest uppercase px-2.5 py-1 rounded-full bg-forest-950/85 text-cream-50 backdrop-blur-sm">

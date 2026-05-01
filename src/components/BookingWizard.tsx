@@ -285,31 +285,15 @@ export default function BookingWizard() {
                   className="w-full px-5 py-3.5 rounded-lg border-2 border-forest-900/10 bg-cream-100 text-forest-950 placeholder:text-forest-800/40 focus:outline-none focus:border-forest-600 transition"
                 />
               </div>
-              <div>
-                <label className="block text-sm font-semibold text-forest-900 mb-3">
-                  Når passer det?
-                </label>
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                  {[
-                    { val: "urgent", label: "Så raskt som mulig", desc: "Innen 2–3 dager" },
-                    { val: "week", label: "Denne uka", desc: "Fleksibel på dag" },
-                    { val: "flexible", label: "Vi tar kontakt", desc: "Når det passer for deg" },
-                  ].map((opt) => (
-                    <button
-                      type="button"
-                      key={opt.val}
-                      onClick={() => setUrgency(opt.val)}
-                      className={`p-4 rounded-lg border-2 text-left transition-all ${
-                        urgency === opt.val
-                          ? "border-forest-600 bg-forest-50"
-                          : "border-forest-900/10 bg-cream-100 hover:border-forest-400"
-                      }`}
-                    >
-                      <p className="font-semibold text-forest-950 text-sm">{opt.label}</p>
-                      <p className="text-xs text-forest-800/60 mt-1">{opt.desc}</p>
-                    </button>
-                  ))}
-                </div>
+              <div className="flex items-start gap-3 p-4 rounded-lg bg-forest-50 border border-forest-200/60">
+                <svg className="w-5 h-5 text-forest-700 mt-0.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round">
+                  <circle cx="12" cy="12" r="10" />
+                  <polyline points="12 6 12 12 16 14" />
+                </svg>
+                <p className="text-sm text-forest-900 leading-relaxed">
+                  <span className="font-semibold">Vi tar kontakt og finner et tidspunkt som passer deg.</span>{" "}
+                  <span className="text-forest-800/70">Som regel innen samme dag — har du hastverk, ring oss direkte.</span>
+                </p>
               </div>
             </div>
             <div className="flex items-center justify-between">
@@ -401,13 +385,12 @@ export default function BookingWizard() {
                 Last opp bilder <span className="text-forest-700/50 font-normal">(inntil 5)</span>
               </label>
               <div
-                onClick={() => fileInputRef.current?.click()}
                 onDragOver={(e) => e.preventDefault()}
                 onDrop={(e) => {
                   e.preventDefault();
                   handleFiles(e.dataTransfer.files);
                 }}
-                className="border-2 border-dashed border-forest-900/20 rounded-lg p-6 text-center cursor-pointer hover:border-forest-600 hover:bg-forest-50 transition-all"
+                className="border-2 border-dashed border-forest-900/20 rounded-lg p-6 text-center hover:border-forest-600 hover:bg-forest-50/50 transition-all"
               >
                 <input
                   ref={fileInputRef}
@@ -417,13 +400,47 @@ export default function BookingWizard() {
                   className="hidden"
                   onChange={(e) => handleFiles(e.target.files)}
                 />
+                <input
+                  ref={cameraInputRef}
+                  type="file"
+                  accept="image/*"
+                  capture="environment"
+                  className="hidden"
+                  onChange={(e) => handleFiles(e.target.files)}
+                />
                 <svg className="w-10 h-10 text-forest-700/50 mx-auto mb-3" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5m-13.5-9L12 3m0 0l4.5 4.5M12 3v13.5" />
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M6.827 6.175A2.31 2.31 0 015.186 7.23c-.38.054-.757.112-1.134.175C2.999 7.58 2.25 8.507 2.25 9.574V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9.574c0-1.067-.75-1.994-1.802-2.169a47.865 47.865 0 00-1.134-.175 2.31 2.31 0 01-1.64-1.055l-.822-1.316a2.192 2.192 0 00-1.736-1.039 48.774 48.774 0 00-5.232 0 2.192 2.192 0 00-1.736 1.039l-.821 1.316z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 12.75a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0zM18.75 10.5h.008v.008h-.008V10.5z" />
                 </svg>
-                <p className="text-sm font-semibold text-forest-900">Klikk eller dra inn bilder</p>
-                <p className="text-xs text-forest-800/50 mt-1">
-                  JPEG, PNG · Helt frivillig, men gir raskere svar
+                <p className="text-sm font-semibold text-forest-900 mb-1">Legg ved bilder av møblene</p>
+                <p className="text-xs text-forest-800/50 mb-4">
+                  Helt frivillig — men gjør det lettere å gi deg et konkret tilbud
                 </p>
+                <div className="flex flex-col sm:flex-row gap-2 justify-center">
+                  <button
+                    type="button"
+                    onClick={() => cameraInputRef.current?.click()}
+                    className="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-forest-900 hover:bg-forest-800 text-cream-50 text-sm font-semibold rounded-full transition-colors"
+                  >
+                    <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
+                      <circle cx="12" cy="13" r="4" />
+                    </svg>
+                    Ta bilde
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => fileInputRef.current?.click()}
+                    className="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-cream-50 hover:bg-cream-100 text-forest-900 text-sm font-semibold rounded-full border border-forest-900/15 transition-colors"
+                  >
+                    <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+                      <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                      <circle cx="8.5" cy="8.5" r="1.5" />
+                      <polyline points="21 15 16 10 5 21" />
+                    </svg>
+                    Velg fra galleri
+                  </button>
+                </div>
               </div>
               {previews.length > 0 && (
                 <div className="grid grid-cols-3 sm:grid-cols-5 gap-3 mt-4">
