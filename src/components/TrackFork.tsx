@@ -18,7 +18,7 @@ export default function TrackFork() {
 
         <div className="grid sm:grid-cols-2 divide-y sm:divide-y-0 sm:divide-x divide-forest-900/10 rounded-xl border border-forest-900/10 bg-cream-50 overflow-hidden">
           <Link
-            href="#priser"
+            href="#booking"
             className="group flex items-center gap-5 px-6 py-7 lg:px-8 lg:py-8 hover:bg-forest-50 transition-colors"
           >
             <div className="w-12 h-12 rounded-full bg-forest-900/5 group-hover:bg-forest-700 group-hover:text-cream-50 text-forest-700 flex items-center justify-center shrink-0 transition-colors">

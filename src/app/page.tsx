@@ -4,11 +4,11 @@ import Link from "next/link";
 import { reader } from "@/lib/reader";
 import HeroMedia from "@/components/HeroMedia";
 import TrackFork from "@/components/TrackFork";
-import Pricing from "@/components/Pricing";
-import CoverageMap from "@/components/CoverageMap";
 import BookingWizard from "@/components/BookingWizard";
 import BusinessQuoteForm from "@/components/BusinessQuoteForm";
 import StickyBookButton from "@/components/StickyBookButton";
+import JsonLd from "@/components/JsonLd";
+import BeforeAfterCarousel from "@/components/BeforeAfterCarousel";
 
 export const metadata: Metadata = {
   title: "Profesjonell dyprengjøring av møbler og tekstiler i Namdalen",
@@ -29,6 +29,29 @@ export default async function HomePage() {
 
   return (
     <>
+      <JsonLd
+        settings={{
+          siteName: settings?.siteName ?? "Rensespesialisten",
+          tagline: settings?.tagline ?? "Profesjonell dyprengjøring av møbler og tekstiler",
+          phone: settings?.phone ?? "",
+          email: settings?.email ?? "",
+          address: settings?.address ?? "",
+          orgNumber: settings?.orgNumber ?? "",
+          openingHoursWeekdays: settings?.openingHoursWeekdays ?? "",
+          openingHoursWeekend: settings?.openingHoursWeekend ?? "",
+          facebookUrl: settings?.facebookUrl,
+        }}
+        services={allServices.map((s) => ({
+          title: s.entry.title,
+          shortDescription: s.entry.shortDescription,
+          slug: s.slug,
+        }))}
+        testimonials={allTestimonials.map((t) => ({
+          name: t.entry.name,
+          text: t.entry.text,
+          rating: t.entry.rating ?? 5,
+        }))}
+      />
       {/* ── 1. HERO — tekst venstre, mykt feathered media på høyre side ── */}
       <section className="relative bg-cream-50 overflow-hidden">
         {/* Varm bakgrunns-gradient — cream-50 til venstre, dypere cream/amber mot høyre */}
@@ -50,16 +73,14 @@ export default async function HomePage() {
           className="hidden lg:block absolute top-1/4 right-[6%] w-[360px] h-[360px] rounded-full bg-forest-200/25 blur-3xl"
         />
 
-        {/* Feathered media: mykt innfelt høyre side, smelter inn i cream via radial maske */}
+        {/* Hero-media: elliptisk bue med klar (uskarp) avgrensning */}
         <div
           aria-hidden
-          className="hidden lg:block pointer-events-none absolute inset-y-0 right-0 w-[48%]"
+          className="hidden lg:block pointer-events-none absolute inset-y-0 right-0 w-[48%] overflow-hidden"
           style={{
-            WebkitMaskImage:
-              "radial-gradient(ellipse 65% 70% at 68% 50%, black 22%, rgba(0,0,0,0.45) 52%, transparent 82%)",
-            maskImage:
-              "radial-gradient(ellipse 65% 70% at 68% 50%, black 22%, rgba(0,0,0,0.45) 52%, transparent 82%)",
-          }}
+            clipPath: "ellipse(65% 70% at 68% 50%)",
+            WebkitClipPath: "ellipse(65% 70% at 68% 50%)",
+          } as React.CSSProperties}
         >
           <HeroMedia />
         </div>
@@ -237,65 +258,27 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* ── 5. FØR & ETTER ────────────────────────────────────── */}
+      {/* ── 5. FØR & ETTER — KARUSELL ───────────────────────── */}
       <section id="resultater" className="py-20 lg:py-28 bg-cream-100">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
-            <div>
-              <div className="flex items-center gap-3 mb-4">
-                <span className="h-px w-12 bg-forest-600" />
-                <span className="text-sm font-medium tracking-widest uppercase text-forest-700">
-                  Resultater
-                </span>
-              </div>
-              <h2 className="font-serif text-4xl sm:text-5xl font-bold text-forest-950 mb-5 leading-tight">
-                Før & etter — samme lenestol
-              </h2>
-              <p className="text-lg text-forest-800/70 leading-relaxed mb-6">
-                Vi dokumenterer alltid resultatet. Du får alle bildene tilsendt
-                etter at vi er ferdige — så du ser presist hva vi har gjort.
-              </p>
-              <ul className="space-y-3 text-sm text-forest-800">
-                {[
-                  "Flekker, lukt og partikler trekkes ut av polstringen",
-                  "Tørr og klar til bruk innen 2–4 timer",
-                ].map((p) => (
-                  <li key={p} className="flex items-start gap-3">
-                    <svg className="w-4 h-4 text-amber-accent mt-0.5 shrink-0" viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clipRule="evenodd" />
-                    </svg>
-                    {p}
-                  </li>
-                ))}
-              </ul>
+          <div className="max-w-2xl mb-10 lg:mb-12">
+            <div className="flex items-center gap-3 mb-4">
+              <span className="h-px w-12 bg-forest-600" />
+              <span className="text-sm font-medium tracking-widest uppercase text-forest-700">
+                Resultater
+              </span>
             </div>
-            <div className="grid grid-cols-2 gap-4">
-              <div className="relative aspect-[4/5] rounded-xl overflow-hidden border border-forest-900/10">
-                <Image
-                  src="/lenestol-for.jpg"
-                  alt="Lenestol med synlige flekker før rens"
-                  fill
-                  sizes="(min-width: 1024px) 25vw, 50vw"
-                  className="object-cover"
-                />
-                <div className="absolute top-3 left-3 text-[10px] font-bold tracking-widest uppercase bg-forest-950 text-cream-50 px-2.5 py-1 rounded">
-                  Før
-                </div>
-              </div>
-              <div className="relative aspect-[4/5] rounded-xl overflow-hidden border border-forest-900/10">
-                <Image
-                  src="/lenestol-etter.jpg"
-                  alt="Samme lenestol etter dyprengjøring — som ny"
-                  fill
-                  sizes="(min-width: 1024px) 25vw, 50vw"
-                  className="object-cover scale-125 object-center"
-                />
-                <div className="absolute top-3 left-3 text-[10px] font-bold tracking-widest uppercase bg-amber-accent text-forest-950 px-2.5 py-1 rounded">
-                  Etter
-                </div>
-              </div>
-            </div>
+            <h2 className="font-serif text-4xl sm:text-5xl font-bold text-forest-950 mb-5 leading-tight">
+              Før & etter — <span className="italic text-forest-700">se forskjellen selv</span>
+            </h2>
+            <p className="text-lg text-forest-800/70 leading-relaxed">
+              Vi dokumenterer alltid resultatet. Bla gjennom ekte oppdrag —
+              skitne områder forsvinner, og møblene blir klare til bruk i løpet
+              av dagen.
+            </p>
           </div>
+
+          <BeforeAfterCarousel />
         </div>
       </section>
 
@@ -321,79 +304,27 @@ export default async function HomePage() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-forest-900/10 rounded-xl overflow-hidden border border-forest-900/10">
               {featuredServices.map((service, i) => (
-                <Link
+                <div
                   key={service.slug}
-                  href={`/tjenester#${service.slug}`}
-                  className="group bg-cream-100 p-8 hover:bg-forest-50 transition-colors relative"
+                  className="bg-cream-100 p-8 relative"
                 >
                   <span className="absolute top-4 right-5 text-xs font-mono font-bold text-forest-600/30 tracking-widest">
                     0{i + 1}
                   </span>
-                  <h3 className="font-serif text-xl font-bold text-forest-950 mb-2 group-hover:text-forest-700 transition-colors">
+                  <h3 className="font-serif text-xl font-bold text-forest-950 mb-2">
                     {service.entry.title}
                   </h3>
-                  <p className="text-forest-800/70 text-sm leading-relaxed mb-4">
+                  <p className="text-forest-800/70 text-sm leading-relaxed">
                     {service.entry.shortDescription}
                   </p>
-                  <span className="inline-flex items-center gap-2 text-sm font-semibold text-forest-700">
-                    Les mer
-                    <svg className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clipRule="evenodd" />
-                    </svg>
-                  </span>
-                </Link>
+                </div>
               ))}
             </div>
           </div>
         </section>
       )}
 
-      {/* ── 7. PRISER + DEKNINGSOMRÅDE ──────────────────────── */}
-      <section id="priser" className="py-20 lg:py-28 bg-cream-100">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
-          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
-            <div className="max-w-xl">
-              <div className="flex items-center gap-3 mb-4">
-                <span className="h-px w-12 bg-forest-600" />
-                <span className="text-sm font-medium tracking-widest uppercase text-forest-700">
-                  Priser & dekning
-                </span>
-              </div>
-              <h2 className="font-serif text-4xl sm:text-5xl font-bold text-forest-950 mb-5 leading-tight">
-                Fra-priser{" "}
-                <span className="italic text-forest-700">du kan planlegge etter</span>
-              </h2>
-              <p className="text-lg text-forest-800/70 leading-relaxed">
-                Inkl. mva. Fast pris bekreftes før vi starter — ingen
-                overraskelser. Se dekningsområdet under.
-              </p>
-            </div>
-            <div className="flex items-center gap-3 bg-forest-900 text-cream-50 px-5 py-4 rounded-xl max-w-sm shrink-0">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-                className="w-6 h-6 text-amber-accent shrink-0"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
-              </svg>
-              <p className="text-sm leading-snug">
-                Privatkunder: priser inkl. mva. Minimumsbestilling kr 890.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <Pricing variant="private" />
-
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 lg:mt-20">
-          <CoverageMap />
-        </div>
-      </section>
-
-      {/* ── 8. BEDRIFT ────────────────────────────────────────── */}
+      {/* ── 7. BEDRIFT ────────────────────────────────────────── */}
       <section id="bedrift" className="py-20 lg:py-28 bg-cream-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-[1fr_1.2fr] gap-10 lg:gap-14 items-start">

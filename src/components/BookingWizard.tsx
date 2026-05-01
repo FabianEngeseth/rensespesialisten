@@ -61,7 +61,7 @@ const serviceOptions: {
   {
     key: "bilinterior",
     label: "Bilinteriør",
-    desc: "Seter, gulv, taktrekk",
+    desc: "Seter, gulv og dashboard",
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-7 h-7">
         <path d="M3 14l1.5-5.5A2 2 0 016.43 7h11.14a2 2 0 011.93 1.5L21 14v4.5a.5.5 0 01-.5.5h-2a.5.5 0 01-.5-.5V18H6v.5a.5.5 0 01-.5.5h-2a.5.5 0 01-.5-.5V14zm3.05-4.5l-1 3.5h13.9l-1-3.5H6.05zM6 15a1 1 0 100 2 1 1 0 000-2zm12 0a1 1 0 100 2 1 1 0 000-2z" />
@@ -99,6 +99,7 @@ export default function BookingWizard() {
   const [previews, setPreviews] = useState<string[]>([]);
   const [formState, setFormState] = useState<"idle" | "loading" | "success" | "error">("idle");
   const fileInputRef = useRef<HTMLInputElement>(null);
+  const cameraInputRef = useRef<HTMLInputElement>(null);
 
   const toggleService = (key: ServiceKey) => {
     const next = new Set(selected);
@@ -292,7 +293,7 @@ export default function BookingWizard() {
                   {[
                     { val: "urgent", label: "Så raskt som mulig", desc: "Innen 2–3 dager" },
                     { val: "week", label: "Denne uka", desc: "Fleksibel på dag" },
-                    { val: "flexible", label: "Fleksibel", desc: "Neste 2–3 uker" },
+                    { val: "flexible", label: "Vi tar kontakt", desc: "Når det passer for deg" },
                   ].map((opt) => (
                     <button
                       type="button"
@@ -338,7 +339,7 @@ export default function BookingWizard() {
         {step === 3 && (
           <div>
             <h3 className="font-serif text-2xl sm:text-3xl font-bold text-forest-950 mb-2">
-              Siste stegget
+              Siste steget
             </h3>
             <p className="text-forest-800/60 mb-7">
               Last gjerne opp bilder — det gir oss et konkret anslag med én gang.

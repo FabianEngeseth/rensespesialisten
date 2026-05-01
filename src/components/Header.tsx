@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
@@ -11,7 +12,6 @@ interface HeaderProps {
 
 const navLinks = [
   { href: "/#tjenester", label: "Tjenester" },
-  { href: "/#priser", label: "Priser" },
   { href: "/#omtaler", label: "Omtaler" },
   { href: "/#bedrift", label: "Bedrift" },
   { href: "/#om-oss", label: "Om oss" },
@@ -28,9 +28,20 @@ export default function Header({ phone, siteName }: HeaderProps) {
         <div className="flex items-center justify-between h-16">
           <Link
             href="/"
-            className="font-serif font-bold text-xl text-forest-950 hover:text-forest-700 transition-colors"
+            className="flex items-center gap-2.5 group"
+            aria-label={`${siteName} — gå til forsiden`}
           >
-            {siteName}
+            <Image
+              src="/logo.png"
+              alt=""
+              width={40}
+              height={40}
+              priority
+              className="w-9 h-9 sm:w-10 sm:h-10 object-contain"
+            />
+            <span className="font-serif font-bold text-lg sm:text-xl text-forest-950 group-hover:text-forest-700 transition-colors">
+              {siteName}
+            </span>
           </Link>
 
           <nav className="hidden lg:flex items-center gap-6">

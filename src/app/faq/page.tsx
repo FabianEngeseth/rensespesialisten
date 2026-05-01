@@ -1,16 +1,35 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import FAQ from "@/components/FAQ";
+import { faqs } from "@/lib/faqs";
 
 export const metadata: Metadata = {
-  title: "Spørsmål og svar — Rensespesialisten",
+  title: "Vanlige spørsmål om møbelrens og tepperens",
   description:
-    "Alle svar på det du lurer på om møbelrens, tepperens og bilinteriørrens fra Rensespesialisten i Namdalen.",
+    "Svar på alt du lurer på om sofarens, tepperens og bilinteriørrens fra Rensespesialisten i Namdalen — tørketid, kjemikalier, dekningsområde, pris og mer.",
+  alternates: { canonical: "/faq" },
+};
+
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((f) => ({
+    "@type": "Question",
+    name: f.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: f.answer,
+    },
+  })),
 };
 
 export default function FAQPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       <FAQ />
 
       <section className="bg-forest-950 text-cream-50 py-16 lg:py-20">

@@ -204,3 +204,12 @@ body {
     transform: none;
   }
 }
+
+/* Hide native scrollbar on horizontal carousels (visual still scrolls) */
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}

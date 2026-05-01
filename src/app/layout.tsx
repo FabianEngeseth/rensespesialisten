@@ -17,20 +17,76 @@ const playfair = Playfair_Display({
   weight: ["400", "500", "600", "700", "800"],
 });
 
+const SITE_URL = "https://rensespesialisten.no";
+
 export async function generateMetadata(): Promise<Metadata> {
   const settings = await reader.singletons.settings.read();
+  const siteName = settings?.siteName ?? "Rensespesialisten";
+  const tagline =
+    settings?.tagline ?? "Profesjonell dyprengjøring av møbler og tekstiler";
+  const description = `${tagline} i Namdalen. Vi kommer hjem til deg og renser sofa, teppe, lenestoler, bilinteriør, bobil og campingvogn — på stedet, uten flytting. Klar til bruk samme dag.`;
+
   return {
+    metadataBase: new URL(SITE_URL),
     title: {
-      template: `%s | ${settings?.siteName ?? "Rensespesialisten"}`,
-      default: `${settings?.siteName ?? "Rensespesialisten"} — ${settings?.tagline ?? "Profesjonell dyprengj\u00f8ring av m\u00f8bler og tekstiler"}`,
+      template: `%s | ${siteName}`,
+      default: `${siteName} — ${tagline} i Namdalen`,
     },
-    description:
-      settings?.tagline ??
-      "Profesjonell dyprengj\u00f8ring av m\u00f8bler og tekstiler i Namdalen.",
+    description,
+    keywords: [
+      "møbelrens",
+      "sofarens",
+      "tepperens",
+      "stolrens",
+      "bilinteriørrens",
+      "bobilrens",
+      "rensespesialisten",
+      "Namdalen",
+      "Nærøysund",
+      "Rørvik",
+      "Kolvereid",
+      "dyprengjøring",
+      "tekstilrens",
+    ],
+    alternates: {
+      canonical: "/",
+    },
     openGraph: {
-      siteName: settings?.siteName ?? "Rensespesialisten",
+      siteName,
       locale: "nb_NO",
       type: "website",
+      url: SITE_URL,
+      title: `${siteName} — ${tagline} i Namdalen`,
+      description,
+      images: [
+        {
+          url: "/hero-bil-hus.jpg",
+          width: 2400,
+          height: 1800,
+          alt: `${siteName} — vi kommer hjem til deg i Namdalen`,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${siteName} — ${tagline}`,
+      description,
+      images: ["/hero-bil-hus.jpg"],
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-snippet": -1,
+        "max-image-preview": "large",
+        "max-video-preview": -1,
+      },
+    },
+    icons: {
+      icon: [{ url: "/icon.png", type: "image/png" }],
+      apple: "/apple-icon.png",
     },
   };
 }

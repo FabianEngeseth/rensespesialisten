@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 interface FooterProps {
@@ -26,7 +27,18 @@ export default function Footer({
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand */}
           <div className="lg:col-span-2">
-            <p className="font-serif font-bold text-2xl text-cream-50 mb-4">{siteName}</p>
+            <div className="flex items-center gap-3 mb-4">
+              <div className="bg-cream-50 rounded-full p-1.5">
+                <Image
+                  src="/logo.png"
+                  alt=""
+                  width={48}
+                  height={48}
+                  className="w-10 h-10 object-contain"
+                />
+              </div>
+              <p className="font-serif font-bold text-2xl text-cream-50">{siteName}</p>
+            </div>
             <p className="text-sm leading-relaxed max-w-sm">
               Profesjonell dyprengjøring av møbler og tekstiler.
               Vi kommer til deg — tjenesten utføres der møblene befinner seg.
@@ -84,8 +96,8 @@ export default function Footer({
             {orgNumber && <span>Org.nr: {orgNumber}</span>}
           </div>
           <div className="flex items-center gap-6">
-            <Link href="/tjenester" className="hover:text-cream-50 transition-colors">Tjenester</Link>
-            <Link href="/kontakt" className="hover:text-cream-50 transition-colors">Kontakt</Link>
+            <Link href="/#tjenester" className="hover:text-cream-50 transition-colors">Tjenester</Link>
+            <Link href="/#booking" className="hover:text-cream-50 transition-colors">Book en rens</Link>
           </div>
         </div>
       </div>
